@@ -1,0 +1,113 @@
+import defaultTheme from 'tailwindcss/defaultTheme';
+
+/** @type {import('tailwindcss').Config} */
+export default {
+    darkMode: 'class',
+    content: [
+        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        './storage/framework/views/*.php',
+        './resources/views/**/*.blade.php',
+        './resources/js/**/*.js',
+        './app/Livewire/**/*.php',
+    ],
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Inter', ...defaultTheme.fontFamily.sans],
+                mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
+                display: ['Inter', ...defaultTheme.fontFamily.sans],
+            },
+            colors: {
+                brand: {
+                    50: '#f5f3ff',
+                    100: '#ede9fe',
+                    200: '#ddd6fe',
+                    300: '#c4b5fd',
+                    400: '#a78bfa',
+                    500: '#8b5cf6',
+                    600: '#7c3aed',
+                    700: '#6d28d9',
+                    800: '#5b21b6',
+                    900: '#4c1d95',
+                    950: '#2e1065',
+                },
+                surface: {
+                    50: '#fafafa',
+                    100: '#f4f4f5',
+                    200: '#e4e4e7',
+                    300: '#d4d4d8',
+                    400: '#a1a1aa',
+                    500: '#71717a',
+                    600: '#52525b',
+                    700: '#3f3f46',
+                    800: '#27272a',
+                    850: '#1f1f23',
+                    900: '#18181b',
+                    950: '#09090b',
+                },
+            },
+            animation: {
+                'fade-in': 'fadeIn 0.6s ease forwards',
+                'fade-up': 'fadeUp 0.6s ease forwards',
+                'fade-down': 'fadeDown 0.6s ease forwards',
+                'slide-in-left': 'slideInLeft 0.6s ease forwards',
+                'slide-in-right': 'slideInRight 0.6s ease forwards',
+                'float': 'float 6s ease-in-out infinite',
+                'float-delayed': 'float 6s ease-in-out 2s infinite',
+                'blob': 'blob 7s infinite',
+                'spin-slow': 'spin 8s linear infinite',
+                'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+                'typing': 'typing 3.5s steps(40, end), blink .75s step-end infinite',
+                'gradient-shift': 'gradientShift 4s ease infinite',
+                'counter-up': 'counterUp 0.3s ease',
+                'shimmer': 'shimmer 2.5s infinite',
+            },
+            keyframes: {
+                fadeIn: { from: { opacity: '0' }, to: { opacity: '1' } },
+                fadeUp: { from: { opacity: '0', transform: 'translateY(30px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
+                fadeDown: { from: { opacity: '0', transform: 'translateY(-30px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
+                slideInLeft: { from: { opacity: '0', transform: 'translateX(-50px)' }, to: { opacity: '1', transform: 'translateX(0)' } },
+                slideInRight: { from: { opacity: '0', transform: 'translateX(50px)' }, to: { opacity: '1', transform: 'translateX(0)' } },
+                float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-20px)' } },
+                blob: {
+                    '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                    '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                    '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                    '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                },
+                pulseGlow: {
+                    '0%, 100%': { boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)' },
+                    '50%': { boxShadow: '0 0 40px rgba(139, 92, 246, 0.8), 0 0 80px rgba(139, 92, 246, 0.3)' },
+                },
+                gradientShift: {
+                    '0%, 100%': { backgroundPosition: '0% 50%' },
+                    '50%': { backgroundPosition: '100% 50%' },
+                },
+                shimmer: {
+                    '0%': { backgroundPosition: '-200% 0' },
+                    '100%': { backgroundPosition: '200% 0' },
+                },
+                counterUp: { from: { transform: 'translateY(10px)', opacity: '0' }, to: { transform: 'translateY(0)', opacity: '1' } },
+            },
+            backgroundImage: {
+                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+                'mesh-gradient': 'radial-gradient(at 40% 20%, rgba(139,92,246,0.3) 0px, transparent 50%), radial-gradient(at 80% 0%, rgba(99,102,241,0.2) 0px, transparent 50%), radial-gradient(at 0% 50%, rgba(168,85,247,0.15) 0px, transparent 50%)',
+            },
+            backdropBlur: { xs: '2px' },
+            boxShadow: {
+                'glow': '0 0 20px rgba(139, 92, 246, 0.3)',
+                'glow-lg': '0 0 40px rgba(139, 92, 246, 0.4)',
+                'glow-indigo': '0 0 20px rgba(99, 102, 241, 0.3)',
+                'card': '0 4px 6px -1px rgba(0,0,0,0.3), 0 2px 4px -1px rgba(0,0,0,0.2)',
+                'card-hover': '0 25px 50px -12px rgba(0,0,0,0.5)',
+                'inner-glow': 'inset 0 0 20px rgba(139, 92, 246, 0.1)',
+            },
+            transitionTimingFunction: {
+                'spring': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+                'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+            },
+        },
+    },
+    plugins: [],
+};
