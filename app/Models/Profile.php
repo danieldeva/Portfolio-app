@@ -1,8 +1,12 @@
 <?php
 namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Profile extends Model {
+    use HasFactory;
+
     protected $fillable = [
         'name','tagline','bio','avatar','email','phone','location',
         'linkedin_url','github_url','resume_path','open_to_work',
@@ -27,3 +31,4 @@ class Profile extends Model {
         ]);
     }
 }
+

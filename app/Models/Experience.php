@@ -1,8 +1,12 @@
 <?php
 namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Experience extends Model {
+    use HasFactory;
+
     protected $fillable = ['title','company','company_url','location','start_date','end_date','is_current','description','achievements','technologies','employment_type','sort_order'];
     protected $casts = [
         'is_current' => 'boolean',
@@ -21,3 +25,4 @@ class Experience extends Model {
         return $years . 'y' . ($rem > 0 ? ' ' . $rem . 'm' : '');
     }
 }
+
